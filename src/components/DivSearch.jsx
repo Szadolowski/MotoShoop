@@ -50,7 +50,7 @@ function DivSearch({ size = "1", insideText, marki, simpleSearchInputs }) {
       exit={isNew ? { scale: 0 } : false}
       value={insideText}
       id={`${insideText}div`}
-      className={`col-span-${size} bg-gray-300 rounded-[6px] w-full h-full ease-in-out relative`}
+      className={`col-span-${size} bg-gray-300 rounded-[6px] w-full h-full ease-in-out relative `}
     >
       <div
         className="h-full flex items-center justify-start p-1.5 space-x-1 overflow-x-auto"
@@ -58,14 +58,14 @@ function DivSearch({ size = "1", insideText, marki, simpleSearchInputs }) {
       >
         {choseName.length === 0
           ? insideText
-          : choseName.map((prop) => <DivInsideInformation key={prop} name={prop} />)}
+          : choseName.map((prop, index) => <DivInsideInformation key={prop} name={prop} />)}
       </div>
       {divSearchStatus && (
-        <div className="absolute max-h-48 overflow-auto bg-gray-300 w-full p-1.5 border-x-2 border-b-2 border-t-0 border-gray-400 border-solid top-10 rounded-b-xl">
+        <div className="absolute max-h-48 bg-gray-300 w-full p-1.5 border-x-2 border-b-2 border-t-0 border-gray-400 border-solid top-10 rounded-b-xl overflow-x-auto">
           {marki.map((name) => (
             <div
               className="font-bold border-solid border-gray-400 border-[1px] p-1 rounded-sm cursor-pointer"
-              key={name}
+              key={`div${name}`}
               onClick={() => {
                 setChoseName([...choseName, name]);
               }}
