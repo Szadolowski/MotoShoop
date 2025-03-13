@@ -116,9 +116,6 @@ let AdvanceSearch = ({ setChange }) => {
       layoutId="search"
       className=" flex justify-center items-center pt-5"
       id="search"
-      // transition={{ duration: 0.4, ease: "easeInOut" }}
-      // initial={{ scale: 0.8 }}
-      // animate={{ scale: 1 }}
     >
       <div className="bg-gray-50 rounded-2xl shadow-2xl border-black p-12 grid grid-cols-6 grid-rows-4 gap-x-4 gap-y-8 place-items-center">
         <InputSerch insideText={"Marka Samochodu"} size={2} />

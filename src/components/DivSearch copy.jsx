@@ -23,14 +23,6 @@ function DivSearch({ size = "1", insideText, marki, simpleSearchInputs }) {
     setDivSearchStatus((isDivSearchStatus) => !isDivSearchStatus);
   }
 
-  const handleCheckboxChange = (name) => {
-    setChoseName((prevChoseName) =>
-      prevChoseName.includes(name)
-        ? prevChoseName.filter((item) => item !== name)
-        : [...prevChoseName, name]
-    );
-  };
-
   const DivInsideInformation = ({ name }) => {
     return (
       <div
@@ -85,13 +77,11 @@ function DivSearch({ size = "1", insideText, marki, simpleSearchInputs }) {
             <div
               className="font-bold border-solid border-gray-400 border-[1px] p-1 rounded-sm cursor-pointer"
               key={`div${name}`}
+              onClick={() => {
+                setChoseName([...choseName, name]);
+              }}
             >
-              <input
-                type="checkbox"
-                className="mr-1"
-                checked={choseName.includes(name)}
-                onChange={() => handleCheckboxChange(name)}
-              />
+              <input type="checkbox" className="mr-1" />
               {name}
             </div>
           ))}
